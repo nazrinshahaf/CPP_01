@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:01:31 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/15 16:13:11 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:29:25 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ int	main()
 		cout << endl;
 		cout << "Test 2" << endl;
 		Weapon Club = Weapon("Blunt Club");
+		Weapon Axe = Weapon("Sharp Axe");
 
 		HumanB Josh = HumanB("Josh");
 		Josh.Attack();
 		Josh.setWeapon(Club);
 		Josh.Attack();
 		Club.setType("Spiked Club");
+		Josh.Attack();
+		Josh.setWeapon(Axe);
 		Josh.Attack();
 	}
 	return 0;

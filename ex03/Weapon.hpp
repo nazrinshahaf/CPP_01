@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:44:06 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/15 15:30:07 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:26:53 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class Weapon
 {
 	public:
 		Weapon(string name);
-		~Weapon(void);
-		const std::string getType(void);
-		void setType(string newType);
+		~Weapon();
+
+		const string	&getType(void) const;
+		void			setType(string const &newType);
 
 	private:
 		string type;

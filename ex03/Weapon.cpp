@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:46:59 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/15 15:30:08 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:26:40 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Weapon::~Weapon(void)
 	cout << "Weapon of type <" << this->type << "> has been destroyed." << endl;
 }
 
-void	Weapon::setType(string newType)
+void			Weapon::setType(string const &newType)
 {
 	this->type = newType;
 }
 
-const std::string	Weapon::getType(void)
+const string	&Weapon::getType(void) const
 {
 	return (this->type);
 }
