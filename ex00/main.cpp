@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:01:39 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/08 13:26:06 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:37:55 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main()
 	{
 		cout << "Test 2" << endl;
 		randomChump("sohai");
+		cout << "Shuold be after destructor" << endl;
 		cout << endl;
 	}
 	{
