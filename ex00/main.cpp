@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:01:39 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/14 14:22:06 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:26:06 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main()
 		cout << "Test 3" << endl;
 		Zombie *Sohai = newZombie("sohai");
 		Sohai->announce();
+		delete Sohai;
 		cout << endl;
 	}
 	{
