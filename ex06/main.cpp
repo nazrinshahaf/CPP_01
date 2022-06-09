@@ -6,12 +6,15 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 12:28:31 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/18 18:10:50 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:24:03 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
 #include <iostream>
+
+#include "Harl.hpp"
+
+#include "colours.h"
 
 int	main(int argc, char **argv)
 {
@@ -23,4 +26,6 @@ int	main(int argc, char **argv)
 		transform(input.begin(), input.end(), input.begin(), ::tolower);
 		Harl.complain(input);
 	}
+	else
+		std::cout << RED "Please only pass in one argument" RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 12:36:08 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/18 18:05:08 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:26:34 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void	Harl::complain(string level)
 			complainLevel = i;
 	switch	(complainLevel)
 	{
+		case -1: {
+			defaultMessage();
+			break ;
+		}
 		case 0: {
 			debug();
 			cout << endl;
@@ -58,9 +62,6 @@ void	Harl::complain(string level)
 		case 3: {
 			error();
 			cout << endl;
-		}
-		default: {
-			defaultMessage();
 		}
 	}
 }
