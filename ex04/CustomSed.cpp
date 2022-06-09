@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:19:42 by nfernand          #+#    #+#             */
-/*   Updated: 2022/03/17 15:15:20 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:49:23 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,6 @@
 using std::string;
 using std::cout;
 using std::endl;
-
-void	CustomSed::print_info(void)
-{
-	cout << CYAN "File to replace :	<" << this->filename << ">" RESET << endl;
-	cout << CYAN "String to find :	\"" << this->s1 << "\"" RESET << endl;
-	cout << CYAN "String to replace :	\"" << this->s2 << "\"" RESET << endl;
-}
-
-void	CustomSed::print_error(void)
-{
-	cout << RED "Cant open file with filename <" << this->filename << ">" RESET << endl;
-	cout << RED "Please use an existing file." << endl;
-}
 
 CustomSed::CustomSed(string filename, string s1, string s2)
 {
@@ -63,19 +50,31 @@ CustomSed::~CustomSed(void)
 {
 }
 
+void	CustomSed::print_info(void)
+{
+	cout << CYAN "File to replace :	<" << this->filename << ">" RESET << endl;
+	cout << CYAN "String to find :	\"" << this->s1 << "\"" RESET << endl;
+	cout << CYAN "String to replace :	\"" << this->s2 << "\"" RESET << endl;
+}
+
+void	CustomSed::print_error(void)
+{
+	cout << RED "Cant open file with filename <" << this->filename << ">" RESET << endl;
+	cout << RED "Please use an existing file." << endl;
+}
+
 void	CustomSed::replace()
 {
-	string		line;
-	string		res;
-	std::size_t	found;
+	string			line;
+	string			res;
+	std::size_t		found;
 	std::ofstream	outputFileStream;
 
-	while(getline(this->inputFileStream, line))
+	while (getline(this->inputFileStream, line))
 	{
 		found = line.find(s1);
   		if (found!=std::string::npos)
 		{
-			//replace word here
 			res.append(line, 0, found);
 			res.append(s2);
 			res.append(line, found + s1.length(), s1.length());
@@ -83,7 +82,6 @@ void	CustomSed::replace()
 		}
 		else
 		{
-			//write normal word
 			res.append(line);
 			res.push_back('\n');
 		}
