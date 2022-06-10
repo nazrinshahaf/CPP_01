@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:19:42 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/09 12:49:23 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:41:09 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	CustomSed::replace()
 		{
 			res.append(line, 0, found);
 			res.append(s2);
-			res.append(line, found + s1.length(), s1.length());
+			res.append(line, found + s1.length(), s1.length() + 1);
 			res.push_back('\n');
 		}
 		else
