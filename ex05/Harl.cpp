@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 12:36:08 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/09 14:40:21 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:03:34 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Harl::complain(string level)
 		"warning",
 		"error"
 	};
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		void	(Harl::*chosenComplain)(void) = complainFunc[i];
 		if (level == complainStatus[i])

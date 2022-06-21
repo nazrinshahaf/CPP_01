@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:19:42 by nfernand          #+#    #+#             */
-/*   Updated: 2022/06/10 11:41:09 by nfernand         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:33:29 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,30 @@ void	CustomSed::replace()
 	string			line;
 	string			res;
 	std::size_t		found;
+	std::size_t		i;
 	std::ofstream	outputFileStream;
 
 	while (getline(this->inputFileStream, line))
 	{
 		found = line.find(s1);
-  		if (found!=std::string::npos)
+		i = 0;
+		if (found!=std::string::npos)
 		{
-			res.append(line, 0, found);
-			res.append(s2);
-			res.append(line, found + s1.length(), s1.length() + 1);
+			while (found <= std::string::npos)
+			{
+				if (i == 0)
+					res.append(line, i, found);
+				res.append(s2);
+				if (line.find(s1, found + 1) >= std::string::npos)
+				{
+					res.append(line, found + s1.length(), s1.length() + 1);
+					break ;
+				}
+				else
+					res.append(line, found + s1.length(), line.find(s1, found + 1) - (found + s1.length()));
+				i = found;
+				found = line.find(s1, found + 1);
+			}
 			res.push_back('\n');
 		}
 		else
